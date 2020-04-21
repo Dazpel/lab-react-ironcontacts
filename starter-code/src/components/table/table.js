@@ -79,9 +79,6 @@ export default class IronContacts extends Component {
                       <img
                         src={row.pictureUrl}
                         alt={row.name}
-                        width="70"
-                        height="70"
-                        borderRadious="50"
                       />
                     </TableCell>
                     <TableCell align="right">{row.name}</TableCell>
