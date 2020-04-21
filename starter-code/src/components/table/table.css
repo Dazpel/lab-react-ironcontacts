@@ -10,6 +10,16 @@
 
 }
 
+.container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.container th {
+    text-align: center;
+}
+
 .container>h1 {
     letter-spacing: .5px;
 }
@@ -20,6 +30,8 @@
     box-shadow: 5px 8px 20px 0px #0000005c !important;
     
 }
+
+
 
 .MuiTableCell-head {
     font-weight: bold !important;
