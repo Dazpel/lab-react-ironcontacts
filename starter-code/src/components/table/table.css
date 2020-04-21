@@ -1,0 +1,40 @@
+.container {
+
+    height: 97vh;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: whitesmoke;
+    grid-template-rows: repeat(3, min-content);
+
+
+}
+
+.container>h1 {
+    letter-spacing: .5px;
+}
+
+.table {
+    max-width: 650px;
+    height: auto;
+    box-shadow: 5px 8px 20px 0px #0000005c !important;
+    
+}
+
+.MuiTableCell-head {
+    font-weight: bold !important;
+    
+}
+
+.MuiTableCell-alignRight{
+    text-align: center !important;
+}
+
+.Btns {
+    height: auto;
+}
+
+.Btns>button {
+    margin: 10px;
+    padding: 10px;
+}
