@@ -13,64 +13,28 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default class IronContacts extends Component {
   state = {
-    obj: [
-      {
-        name: 'Idris Elba',
-        pictureUrl:
-          'https://image.tmdb.org/t/p/w500/d9NkfCwczP0TjgrjpF94jF67SK8.jpg',
-        popularity: 11.622713,
-        id: '11731993-0604-4bee-80d5-67ad845d0a38',
-      },
-      {
-        name: 'Jessica Chastain',
-        pictureUrl:
-          'https://image.tmdb.org/t/p/w500/nkFrkn5NZVGWb4b2X0yIcXezhyt.jpg',
-        popularity: 8.324357,
-        id: '17980511-75ca-48b0-bea8-462fec2ee43d',
-      },
-      {
-        name: 'Johnny Depp',
-        pictureUrl:
-          'https://image.tmdb.org/t/p/w500/kbWValANhZI8rbWZXximXuMN4UN.jpg',
-        popularity: 15.656534,
-        id: '7dad00f7-3949-477d-a7e2-1467fd2cfc06',
-      },
-      {
-        name: 'Emilia Clarke',
-        pictureUrl:
-          'https://image.tmdb.org/t/p/w500/j7d083zIMhwnKro3tQqDz2Fq1UD.jpg',
-        popularity: 16.211837,
-        id: 'e14aa81d-b812-412d-bc4d-4a0d2c9c66f4',
-      },
-      {
-        name: 'Leonardo DiCaprio',
-        pictureUrl:
-          'https://image.tmdb.org/t/p/w500/A85WIRIKVsD2DeUSc8wQ4fOKc4e.jpg',
-        popularity: 11.245333,
-        id: 'b4d2c7b8-fdd5-426a-85bd-011c3f50a6c6',
-      },
-    ],
+    list: contacts.slice(0, 5)
   };
 
   addContact = () => {
     let newContact = contacts[Math.floor(Math.random() * (199 - 5) + 5)];
-    this.setState({ obj: this.state.obj.concat(newContact) });
+    this.setState({ list: this.state.list.concat(newContact) });
   };
 
   sortName = () => {
-    let currentArr = [...this.state.obj].sort(function(a, b){return (a.name).localeCompare(b.name)})
-    this.setState({ obj: currentArr});
+    let currentArr = [...this.state.list].sort(function(a, b){return (a.name).localeCompare(b.name)})
+    this.setState({ list: currentArr});
   }
 
   sortPopularity = () => {
-    let currentArr = [...this.state.obj].sort(function(a, b){return b.popularity - a.popularity})
-    this.setState({ obj: currentArr});
+    let currentArr = [...this.state.list].sort(function(a, b){return b.popularity - a.popularity})
+    this.setState({ list: currentArr});
   }
 
   deleteThis = (id) => {
-    let currentArr = [...this.state.obj]
+    let currentArr = [...this.state.list]
     currentArr.splice(id, 1)
-    this.setState({ obj: currentArr});
+    this.setState({ list: currentArr});
   }
 
   render() {
@@ -101,7 +65,7 @@ export default class IronContacts extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.obj.map((row, index) => (
+              {this.state.list.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell component="th" scope="row">
                     <img
