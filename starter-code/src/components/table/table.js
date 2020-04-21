@@ -89,7 +89,6 @@ export default class IronContacts extends Component {
                       <Button
                         variant="contained"
                         color="secondary"
-                        href="#contained-buttons"
                         onClick={() => this.deleteThis(index)}
                       >
                         Delete
